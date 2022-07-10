@@ -13,7 +13,13 @@ export default {
   },
   beforeCreate() {
     this.$store.dispatch('user/setInfo')
-    this.$store.dispatch('cart/setCarts')
+    // this.$store.dispatch('cart/setCarts')
   }
 }
 </script>
+
+<style>
+  #app {
+    max-width: 600px;
+  }
+</style>

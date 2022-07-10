@@ -1,5 +1,4 @@
 import Cookies from 'js-cookie'
-
 const TokenKey = 'vue_mall_template_token'
 
 export function getToken() {
@@ -7,6 +6,7 @@ export function getToken() {
 }
 
 export function setToken(token) {
+  console.log('setToken:' + token)
   return Cookies.set(TokenKey, token)
 }
 

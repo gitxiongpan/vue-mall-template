@@ -8,12 +8,12 @@
         <div class="user-info__title">{{ userName }}</div>
       </van-col>
     </van-row>
-    <van-row type="flex" justify="center" class="user-info__count">
+    <!-- <van-row type="flex" justify="center" class="user-info__count">
       <van-col span="6">收藏夹</van-col>
       <van-col span="6">关注店铺</van-col>
       <van-col span="6">足迹</van-col>
       <van-col span="6">红包卡卷</van-col>
-    </van-row>
+    </van-row> -->
   </div>
 </template>
 

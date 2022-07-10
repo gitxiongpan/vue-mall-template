@@ -12,7 +12,7 @@ import { Notify } from 'vant'
 import { getToken } from '@/utils/auth'
 
 const config = {
-  baseURL: 'http://luoyangc.cn:22330',
+  baseURL: 'http://localhost:8000',
   timeout: 60 * 1000
 }
 
@@ -21,7 +21,7 @@ const _axios = axios.create(config)
 _axios.interceptors.request.use(
   config => {
     const token = getToken()
-    if (token) config.headers['token'] = token
+    if (token) config.headers['Authorization'] = 'Token ' + token
     return config
   },
   error => {

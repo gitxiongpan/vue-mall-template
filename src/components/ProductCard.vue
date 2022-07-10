@@ -1,10 +1,10 @@
 <template>
   <div class="product-card">
-    <van-image lazy-load :src="item.merchandisePictures[0].image" />
+    <van-image lazy-load :src="item.image" />
     <div class="product-card__title">{{ item.name }}</div>
     <div class="product-card__price">
-      <span class="product-card__present">￥{{ item.currentPrice }}</span>
-      <s class="product-card__original">￥{{ item.originalPrice }}</s>
+      <span class="product-card__present">￥{{ item.price /100 }}</span>
+      <!-- <s class="product-card__original">￥{{ item.price }}</s> -->
     </div>
   </div>
 </template>

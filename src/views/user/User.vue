@@ -2,8 +2,9 @@
   <div class="user">
     <user-navbar />
     <user-info />
-    <user-order />
-    <user-product />
+    <!-- <user-order /> -->
+    <!-- <user-product /> -->
+    <UserOrderList />
   </div>
 </template>
 
@@ -11,7 +12,8 @@
 import UserNavbar from './components/UserNavbar'
 import UserInfo from './components/UserInfo'
 import UserOrder from './components/UserOrder'
-import UserProduct from './components/UserProduct'
+import UserOrderList from './components/UserOrderList'
+// import UserProduct from './components/UserProduct'
 export default {
   name: 'User',
   middleware: 'auth',
@@ -19,7 +21,8 @@ export default {
     UserNavbar,
     UserInfo,
     UserOrder,
-    UserProduct
+    UserOrderList
+    // UserProduct
   }
 }
 </script>

@@ -1,4 +1,4 @@
-import { userLogin, getUserInfo } from '@/api'
+import { userLogin, getUserInfo, sendMobileCode } from '@/api'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 
 const state = {
@@ -21,20 +21,27 @@ const mutations = {
 
 const actions = {
   // 用户登录
+  async getMobileCode({ commit, dispatch }, mobile) {
+    const res = await sendMobileCode(mobile)
+    if (res) {
+      return res
+    }
+  },
+  // 用户登录
   async login({ commit, dispatch }, form) {
-    const { data } = await userLogin(form)
-    if (data) {
+    const { token } = await userLogin(form)
+    if (token) {
       dispatch('setInfo')
-      commit('SET_TOKEN', data.token)
-      setToken(data.token)
-      return data
+      commit('SET_TOKEN', token)
+      setToken(token)
+      return token
     }
   },
   // 设置用户信息
   async setInfo({ commit }) {
-    const { data } = await getUserInfo()
+    const data = await getUserInfo()
     if (data) {
-      commit('SET_NAME', data.name)
+      commit('SET_NAME', data.nickname)
       commit('SET_AVATAR', data.avatar)
     }
   },
